@@ -1,7 +1,7 @@
 #!/bin/bash
 #install mariadb version 11.4
 #get key and repo.
-echo "Create repo"
+echo "Create repo mariadb v11.4"
 apt install apt-transport-https curl
 mkdir -p /etc/apt/keyrings
 curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
@@ -25,5 +25,8 @@ echo "install mariadb"
 apt update
 apt -y install mariadb-server mariadb-client mariadb-backup
 
-echo "run command \"mysql_secure_installation\"
+systemctl enable mariadb
+echo "service mariadb is enabled"
+
+echo "run command \"mysql_secure_installation\""
 
